@@ -1,6 +1,6 @@
 {
   "builds":[ {
-    "src":"tempmain1.py",
+    "src":"/(.*)",
     "use":"@vercel/python" }
   ]
   ,
