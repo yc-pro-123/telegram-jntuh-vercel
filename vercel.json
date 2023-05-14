@@ -1,6 +1,6 @@
 {
   "builds":[ {
-    "src":"tempmain1.py",
+    "src":"tempmain1.py","clg_info.py","sgpa_cal.py",
     "use":"@vercel/python" }
   ]
   ,
