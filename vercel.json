@@ -1,4 +1,4 @@
-{
+{ "version":2,
   "builds":[ {
     "src":"tempmain1.py",
     "use":"@vercel/python" }
