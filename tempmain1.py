@@ -1,4 +1,4 @@
-import requests
+import requests ,os
 import json , datetime
 from clginfo import *
 from sgpa_cal import *
@@ -6,7 +6,7 @@ from flask import Flask
 from flask import request
 from flask import Response
 app = Flask('__name__')
-
+BOT_TOKEN=os.getenv('BOT_TOKEN')
 api=f'https://api.telegram.org/bot{BOT_TOKEN}'
 def get_data(r_no):
     url=f'https://results-restapi.up.railway.app/all-r18/{r_no}'
