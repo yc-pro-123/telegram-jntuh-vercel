@@ -87,7 +87,7 @@ def parse_message(message):
 
 def wel_info(chat_id):
     resp ={ 'chat_id':chat_id,
-    'text': "Hiii , Users....\nValid Format for using this bot are given Below : \n • ___20XXXAXXXX all___ - For All Sem Results\n • ___20XXXAXXXX 1-1___ - For Respective Sem\n • ___20XXXAXXXX 1-1 SGPA___  - For Finding SGPA of a Respective Sem\n• 20XXXAXXXX credits - For No Credits Earned\n*Note* : \n *I* -- Internal Marks\n*E* -- External Marks\n*G* -- Grade Earned\n*T* -- Total Marks Earned\n\n<imp>Works *Only for R18* Regulation </imp>",'parse_mode': 'Markdown'
+    'text': "Hiii , Users....\nValid Format for using this bot are given Below : \n • ___20XXXAXXXX all___ - For All Sem Results\n • ___20XXXAXXXX 1-1___ - For Respective Sem\n • ___20XXXAXXXX 1-1 SGPA___  - For Finding SGPA of a Respective Sem\n• 20XXXAXXXX credits - For No of Credits Earned\n*Note* :\n *I* -- Internal Marks\n*E* -- External Marks\n*G* -- Grade Earned\n*T* -- Total Marks Earned\n\n<imp>Works *Only for R18* Regulation </imp>",'parse_mode': 'Markdown'
 }   
 
     u= send_mess(resp)
@@ -277,7 +277,7 @@ def index():
                 
                 print('All Completed .....')
                 send_mess({'chat_id':chat_id,'text':'.......Request\n          Accomplished......'})
-                send_mess({'chat_id':chat_id,'text':'\nFor a Soft Copy of Result [click here](https://t.me/Ucdgdgvou_bot?start={rno}','parse_mode':'Markdown'})
+                #send_mess({'chat_id':chat_id,'text':'\nFor a Soft Copy of Result [click here](https://t.me/Ucdgdgvou_bot?start={rno}','parse_mode':'Markdown'})
             except:
                 repo={'chat_id':chat_id,'text':'Looks like Something Went wrong......\nPlease try again Later'}
                 send_mess(repo)
