@@ -648,6 +648,6 @@ def main():
     #j .  !!!!!!!;;;+::%%6send_err()
     
 #flask --app hello --debug run
-if __name__ =='__main__':
-    app.run(debug=True)
+#if __name__ =='__main__':
+    #app.run(debug=True)
     #main()
