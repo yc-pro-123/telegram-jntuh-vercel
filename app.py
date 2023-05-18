@@ -82,7 +82,7 @@ def parse_message(message):
    
    print('Chat_id :',chat_id,'\t',datetime.datetime.fromtimestamp(date))
    #print('User Id : '+nameby["username"])
-print(nameby["first_name"]+'\t'+nameby["last_name"])
+   print(nameby["first_name"]+'\t'+nameby["last_name"])
    print('Message Id :',msg_id,'\t\t',txt)
    return chat_id , txt ,msg_id
 
