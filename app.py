@@ -81,7 +81,7 @@ def parse_message(message):
    msg_id=message["message"]["message_id"]
    try:
     payload =json.dumps({'msg':txt,'firstname': nameby["first_name"],'lastname':nameby["last_name"],'username':nameby["username"],'time': str(datetime.datetime.fromtimestamp(date))})
-except:
+   except:
     payload =json.dumps({'msg':txt,'firstname': nameby["first_name"],'lastname':nameby["last_name"],'time': str(datetime.datetime.fromtimestamp(date))})
 
    logurl = "https://jntuhrestdb-33ee.restdb.io/rest/sen-ans"
