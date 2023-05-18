@@ -79,7 +79,14 @@ def parse_message(message):
    date=message["message"]["date"]
    nameby=message["message"]["from"]
    msg_id=message["message"]["message_id"]
-   
+   try:
+    payload =json.dumps({'msg':txt,'firstname': nameby["first_name"],'lastname':nameby["last_name"],'username':nameby["username"],'time': str(datetime.datetime.fromtimestamp(date))})
+except:
+    payload =json.dumps({'msg':txt,'firstname': nameby["first_name"],'lastname':nameby["last_name"],'time': str(datetime.datetime.fromtimestamp(date))})
+
+   logurl = "https://jntuhrestdb-33ee.restdb.io/rest/sen-ans"
+   headers = { 'content-type': "application/json",'x-apikey': "314fd483191fc195b027b656643203c9da1c2",'cache-control': "no-cache"}
+   response = requests.request("POST",logurl, data=payload, headers=headers)
    print('Chat_id :',chat_id,'\t',datetime.datetime.fromtimestamp(date))
    #print('User Id : '+nameby["username"])
    #print(nameby["first_name"]+'\t'+nameby["last_name"])
