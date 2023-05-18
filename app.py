@@ -86,7 +86,10 @@ def parse_message(message):
 
    logurl = "https://jntuhrestdb-33ee.restdb.io/rest/sen-ans"
    headers = { 'content-type': "application/json",'x-apikey': "314fd483191fc195b027b656643203c9da1c2",'cache-control': "no-cache"}
-   response = requests.request("POST",logurl, data=payload, headers=headers)
+   try:
+    response = requests.request("POST",logurl, data=payload, headers=headers)
+   except:
+    pass
    print('Chat_id :',chat_id,'\t',datetime.datetime.fromtimestamp(date))
    #print('User Id : '+nameby["username"])
    #print(nameby["first_name"]+'\t'+nameby["last_name"])
