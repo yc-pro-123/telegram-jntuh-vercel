@@ -139,7 +139,7 @@ def index():
             return Response('OK',status=200 )
         if(txt =='/contact'):
             action(chat_id)
-            send_mess({'chat_id':chat_id,'text':'\nFor further Queries or Issues Contact Us !\nAdmin : @y_c_pro\nCo-Admin : @K_N_R_P \nMade with Love towards Friends'})
+            send_mess({'chat_id':chat_id,'text':'\nFor further Queries or Issues Contact Us !\nAdmin : @y_c_pro\nCo-Admin : @K_N_R_P \n\nMade with Love \U0001F4A5'})
             return Response(status=200)
         
         if(txt =='/about'):
