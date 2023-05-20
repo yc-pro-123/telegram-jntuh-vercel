@@ -12,9 +12,11 @@ def get_data(r_no):
     url=f'https://results-restapi.up.railway.app/all-r18/{r_no}'
     print('Getting Dataa.......')
     try:
-        r=requests.get(url)
+        r=requests.get(url,timeout=8)
     except:
-        pass
+        send_mess({'chat_id':chat_id,'text':'JNTUH Server seems to be down,\nTry again Later....!'})
+        r='No Response'
+        
     return r
 semre={
  '1-1': 1 , '1-2':2,'2-1':3,'2-2':4,'3-1':5,'3-2':6,'4-1':7,'4-2':8
@@ -176,6 +178,8 @@ def index():
             send_mess(repo)
             return Response(status=200)
         v=get_data(rno.upper());
+        if v=='No Response':
+            return Response(status=200)
         #print(v.text)
         if(r.status_code == 200):
             i=json.loads(v.content)
