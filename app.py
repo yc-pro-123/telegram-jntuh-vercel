@@ -14,7 +14,7 @@ def get_data(r_no):
     try:
         r=requests.get(url,timeout=8)
     except:
-        send_mess({'chat_id':chat_id,'text':'JNTUH Server seems to be down,\nTry again Later....!'})
+        
         r='No Response'
         
     return r
@@ -179,6 +179,7 @@ def index():
             return Response(status=200)
         v=get_data(rno.upper());
         if v=='No Response':
+            send_mess({'chat_id':chat_id,'text':'JNTUH Server seems to be down,\nTry again Later....!'})
             return Response(status=200)
         #print(v.text)
         if(r.status_code == 200):
