@@ -11,7 +11,10 @@ api=f'https://api.telegram.org/bot{BOT_TOKEN}'
 def get_data(r_no):
     url=f'https://results-restapi.up.railway.app/all-r18/{r_no}'
     print('Getting Dataa.......')
-    r=requests.get(url)
+    try:
+        r=requests.get(url)
+    except:
+        pass
     return r
 semre={
  '1-1': 1 , '1-2':2,'2-1':3,'2-2':4,'3-1':5,'3-2':6,'4-1':7,'4-2':8
@@ -174,7 +177,10 @@ def index():
             return Response(status=200)
         v=get_data(rno.upper());
         #print(v.text)
-        i=json.loads(v.content)
+        if(r.status_code == 200):
+            i=json.loads(v.content)
+        else:
+            return Response('OK',status=200)
         try:
             details=i["data"]["details"]
         except:
