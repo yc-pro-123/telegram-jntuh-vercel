@@ -182,7 +182,7 @@ def index():
             send_mess({'chat_id':chat_id,'text':'JNTUH Server seems to be down,\nTry again Later....!'})
             return Response(status=200)
         #print(v.text)
-        if(r.status_code == 200):
+        if(v.status_code == 200):
             i=json.loads(v.content)
         else:
             return Response('OK',status=200)
