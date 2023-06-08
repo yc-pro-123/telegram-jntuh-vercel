@@ -131,7 +131,7 @@ def roll_mem(rno):
 @app.route('/',methods=["POST" ,"GET"])
 def index():
     if request.method == 'POST':
-        maintaince=True
+        maintainence=True
         
         msg = request.get_json()
         #print(msg,'\n')
