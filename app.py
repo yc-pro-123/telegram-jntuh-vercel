@@ -131,13 +131,18 @@ def roll_mem(rno):
 @app.route('/',methods=["POST" ,"GET"])
 def index():
     if request.method == 'POST':
+        maintaince=True
+        
         msg = request.get_json()
         #print(msg,'\n')
         try:
             chat_id , txt ,msg_id = parse_message(msg)
         except:            
             return Response(status=200)
-        
+        if maintainence==True:
+            resp={'chat_id':chat_id,'text':'Heyy ! Bot is Under maintenance......\nPlease , Co operate with us.......'}
+            send_mess(resp)
+            return Response('OK',status=200)
         #print(chat_id,txt)  
         if(txt == '/start'):
             wel_info(chat_id)
