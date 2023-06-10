@@ -264,27 +264,14 @@ def index():
         
 
         if(sel[:3]=='ALL'):
-            action(chat_id)
-            
-            
-            
+            action(chat_id)                                  
             clg = getclg(details['COLLEGE CODE'])
-
             try:
-
                 text=details['HTNO']+'\n'+details['NAME']+'\n\n'+clg['C_name']+'\n'+clg['Code']+'\n'+clg['City']
-
             except:
-
-                text="Think There's a Problem...."
-
-            
-
+                text="Think There's a Problem...."            
             repo={
-
-            'chat_id':chat_id,
-
-            'text':text,'reply_to_message_id':msg_id,'protect_content':True}
+            'chat_id':chat_id,'text':text,'reply_to_message_id':msg_id,'protect_content':True}
 
             send_mess(repo)
             try:
