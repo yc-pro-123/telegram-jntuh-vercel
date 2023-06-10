@@ -131,7 +131,7 @@ def roll_mem(rno):
 @app.route('/',methods=["POST" ,"GET"])
 def index():
     if request.method == 'POST':
-        maintainence=True
+        maintainence=False
         
         msg = request.get_json()
         #print(msg,'\n')
@@ -149,7 +149,7 @@ def index():
             return Response('OK',status=200 )
         if(txt =='/contact'):
             action(chat_id)
-            send_mess({'chat_id':chat_id,'text':'\nFor further Queries or Issues Contact Us !\nAdmin : @y_c_pro\nCo-Admin : @K_N_R_P \nMade with Love \U0001F4A5'})
+            send_mess({'chat_id':chat_id,'text':'\nFor further Queries or Issues Contact Us !\nAdmin : @y_c_pro\nCo-Admin : @K_N_R_P \nSpecial Credits to Hemanth.K and his team.\n\nMade with Love \U0001F4A5'})
             return Response(status=200)
         
         if(txt =='/about'):
@@ -265,6 +265,28 @@ def index():
 
         if(sel[:3]=='ALL'):
             action(chat_id)
+            
+            
+            
+            clg = getclg(details['COLLEGE CODE'])
+
+            try:
+
+                text=details['HTNO']+'\n'+details['NAME']+'\n\n'+clg['C_name']+'\n'+clg['Code']+'\n'+clg['City']
+
+            except:
+
+                text="Think There's a Problem...."
+
+            
+
+            repo={
+
+            'chat_id':chat_id,
+
+            'text':text,'reply_to_message_id':msg_id,'protect_content':True}
+
+            send_mess(repo)
             try:
                 print('All startedd...',end="\r")
                 for w in range(1,len(data)+1,1):
