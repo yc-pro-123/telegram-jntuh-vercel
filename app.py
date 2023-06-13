@@ -169,6 +169,7 @@ def index():
             send_mess({'chat_id':chat_id,'text':'Seems like its a Invalid Number \nPlz ,Try again with a Valid Number.....'})
             return Response('OK',status =200)
         
+        rno=rno.upper()
         mem = roll_mem(rno)
         if(mem=='LE'):
             sem=semle
