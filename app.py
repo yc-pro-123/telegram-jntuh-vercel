@@ -138,7 +138,9 @@ def index():
         #print(msg,'\n')
         try:
             chat_id , txt ,msg_id = parse_message(msg)
-        except:            
+        except:
+           
+            print("Parse ended.....")
             return Response(status=200)
         if maintainence==True:
             resp={'chat_id':chat_id,'text':'Heyy ! Bot is Under maintenance......\nPlease , Co operate with us.......'}
