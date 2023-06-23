@@ -81,10 +81,15 @@ def parse_message(message):
    print(message)
    print("Parse started....")
    chat_id=message["message"]["chat"]["id"]
+   print("1")
    txt=message["message"]["text"]
+   print("2")
    date=message["message"]["date"]
+   print("3")
    nameby=message["message"]["from"]
+   print("4")
    msg_id=message["message"]["message_id"]
+   print("5")
    try:
     payload =json.dumps({'msg':txt,'firstname': nameby["first_name"],'lastname':nameby["last_name"],'username':nameby["username"],'chat_id':chat_id,'time': str(datetime.datetime.fromtimestamp(date))})
    except:
@@ -97,6 +102,8 @@ def parse_message(message):
    except:
     pass
    print('Chat_id :',chat_id,'\t',datetime.datetime.fromtimestamp(date))
+   print("6")
+    
    #print('User Id : '+nameby["username"])
    #print(nameby["first_name"]+'\t'+nameby["last_name"])
    print('Message Id :',msg_id,'\t\t',txt)
