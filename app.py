@@ -101,6 +101,7 @@ def parse_message(message):
     response = requests.request("POST",logurl, data=payload, headers=headers)
    except:
     pass
+   print("6 1")
    print('Chat_id :',chat_id,'\t',datetime.datetime.fromtimestamp(date))
    print("6")
     
