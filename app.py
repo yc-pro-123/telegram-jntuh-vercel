@@ -78,7 +78,7 @@ def send_mess(resp):
     return r.status_code
    
 def parse_message(message):
-   #print(message)
+   print(message)
    print("Parse started....")
    chat_id=message["message"]["chat"]["id"]
    txt=message["message"]["text"]
