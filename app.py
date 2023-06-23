@@ -81,11 +81,11 @@ def parse_message(message):
    print(message)
    print("Parse started....")
    chat_id=message["message"]["chat"]["id"]
-   print(chat_id)
+   #print(chat_id)
    txt=message["message"]["text"]
-   print(txt)
+   #print(txt)
    date=message["message"]["date"]
-   print(date)
+   #print(date)
    nameby=message["message"]["from"]
    print("4.1")
    msg_id=message["message"]["message_id"]
@@ -93,11 +93,14 @@ def parse_message(message):
    try:
     payload =json.dumps({'msg':txt,'firstname': nameby["first_name"],'lastname':nameby["last_name"],'username':nameby["username"],'chat_id':chat_id,'time': str(datetime.datetime.fromtimestamp(date))})
    except:
-    payload =json.dumps({'msg':txt,'firstname': nameby["first_name"],'lastname':nameby["last_name"],'chat_id':chat_id,'time': str(datetime.datetime.fromtimestamp(date))})
+    try:
+        payload =json.dumps({'msg':txt,'firstname': nameby["first_name"],'lastname':nameby["last_name"],'chat_id':chat_id,'time': str(datetime.datetime.fromtimestamp(date))})
+    except:
+        payload =json.dumps({'msg':txt,'firstname': nameby["first_name"],'chat_id':chat_id,'time': str(datetime.datetime.fromtimestamp(date))})
 
    print("5.1")
    logurl = "https://jntuhrestdb-33ee.restdb.io/rest/sen-ans"
-   print("5.2")
+  
    headers = { 'content-type': "application/json",'x-apikey': "314fd483191fc195b027b656643203c9da1c2",'cache-control': "no-cache"}
    try:
     response = requests.request("POST",logurl, data=payload, headers=headers)
