@@ -108,8 +108,7 @@ def parse_message(message):
     pass
    print("6 1")
    print('Chat_id :',chat_id,'\t',datetime.datetime.fromtimestamp(date))
-   print("6")
-    
+       
    #print('User Id : '+nameby["username"])
    #print(nameby["first_name"]+'\t'+nameby["last_name"])
    print('Message Id :',msg_id,'\t\t',txt)
@@ -145,7 +144,7 @@ def roll_mem(rno):
 @app.route('/',methods=["POST" ,"GET"])
 def index():
     if request.method == 'POST':
-        maintainence=False
+        maintainence= True
         
         msg = request.get_json()
         #print(msg,'\n')
