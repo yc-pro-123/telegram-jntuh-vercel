@@ -367,9 +367,9 @@ def index():
                         try:
                             r=sgpa(listt)                        
                             if(isinstance(r,float)):
-                                txt+="Your's SGPA in "+sel[:3] +" is "+str(r)
+                                txt="Your's SGPA in "+sel[:3] +" is "+str(r)
                             else:
-                                txt+="Can't able to Find SGPA"
+                                txt="Can't able to Find SGPA"
                         except:
                             txt='Sorry Cant find You SGPA'
 
@@ -412,9 +412,9 @@ def index():
                             r=sgpa(listt)
                         
                             if(isinstance(r,float)):
-                                txt+="Your's SGPA in "+sel[:3] +" is "+str(r)
+                                txt="Your's SGPA in "+sel[:3] +" is "+str(r)
                             else:
-                                txt+="Can't able to Find SGPA"
+                                txt="Can't able to Find SGPA"
                         except:
                             txt='Sorry Cant find You SGPA'
 
@@ -450,9 +450,9 @@ def index():
                         r=sgpa(listt)
                     
                         if(isinstance(r,float)):
-                            txt+="Your's SGPA in "+sel[:3] +" is "+str(r)
+                            txt="Your's SGPA in "+sel[:3] +" is "+str(r)
                         else:
-                            txt+="Can't able to Find SGPA"
+                            txt="Can't able to Find SGPA"
                     except: 
                         txt='Sorry Cant find You SGPA'
 
@@ -487,9 +487,9 @@ def index():
                         r=sgpa(listt)
                     
                         if(isinstance(r,float)):
-                            txt+="Your's SGPA in "+sel[:3] +" is "+str(r)
+                            txt="Your's SGPA in "+sel[:3] +" is "+str(r)
                         else:
-                            txt+="Can't able to Find SGPA"
+                            txt="Can't able to Find SGPA"
                     except:
                         txt='Sorry Cant find You SGPA'
 
